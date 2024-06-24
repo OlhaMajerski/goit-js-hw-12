@@ -12,6 +12,7 @@ let gallery = new SimpleLightbox('.gallery a', {
 
 const galleryContainer = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
+const loadMoreBtn = document.querySelector('.load-more');
 
 export function showLoader() {
   loader.style.display = 'block';
@@ -36,9 +37,14 @@ function imageTemplate(image) {
 function imagesTemplate(images) {
   return images.map(imageTemplate).join('');
 }
-export function renderImages(images) {
+
+export function renderImages(images, isFirstLoad) {
   const markup = imagesTemplate(images);
-  galleryContainer.innerHTML = markup;
+  if (isFirstLoad) {
+    galleryContainer.innerHTML = markup;
+  } else {
+    galleryContainer.innerHTML += markup;
+  }
   gallery.refresh();
 }
 

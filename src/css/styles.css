@@ -1,10 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 215, 0, 0.8) 50%,
-    rgba(0, 87, 183, 0.8) 50%
-  );
+  background: rgba(255, 215, 0, 0.8) 50%;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -44,6 +40,7 @@ header {
 .search-form button:focus {
   background-color: #0056b3;
   transform: scale(1.1);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .loader {
@@ -65,7 +62,7 @@ header {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 48px;
   justify-content: center;
 }
 
@@ -109,6 +106,19 @@ header {
 
 .gallery-item .info p b {
   color: #ffb400;
+}
+
+.load-more {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0057b7;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @keyframes rotation {
